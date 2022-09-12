@@ -1,0 +1,115 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+header {
+padding-top: 40px;
+display: flex;
+justify-content: center;
+text-align: center;
+}
+
+#type {
+	font-size: 100px;
+	height: 150px;
+}
+
+div.container {
+	display: flex;
+
+}
+
+.slideIn img {
+	width: 50%;
+	max-width: 230px;
+}
+
+.slideIn{
+	flex: 1;
+	text-align: center;
+	position: relative;
+	top: -150px;
+	opacity: 0;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+	padding-bottom: 30px;
+}
+
+.skillPoint {
+	display:flex;
+	justify-content: center;
+	column-gap: 10px;
+	padding-top: 5px;
+}
+
+.skillPoint div{
+	background-color: white;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+}
+
+.skillPoint .red{
+	background-color: red;
+}
+
+@keyframes slideIn {
+	100% { top:  300px; opacity: 1;}
+}
+
+
+
+@keyframes blink {
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+
+#type::after{
+	content: "|";
+	animation-name: blink;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: reverse;
+	animation-fill-mode: forwards;
+}
+
+
+@media (max-width: 880px){
+	#type {
+		font-size: 70px;
+		height: 150px;
+	}
+	
+	@keyframes slideIn {
+	100% { top:  200px; opacity: 1;}
+	}
+}
+
+@media (max-width: 530px){
+	#type{
+		font-size: 40px;
+		height: 100px;
+	}
+	div.container{
+		flex-direction: column;
+		row-gap: 50px;
+	}
+	.slideIn img {
+		width: 30%;
+	}
+	@keyframes slideIn {
+		100% { top:  100px; opacity: 1;}
+	}
+	.slideIn {
+		padding-bottom: 0;
+	}
+	.skillPoint div{
+		height: 15px;
+		width: 15px;
+	}
+	.paddingBottom40{
+		padding-bottom: 40px;
+	}
+}
